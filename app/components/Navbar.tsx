@@ -9,7 +9,7 @@ const Navbar = () => {
             <Link to="/upload" className="primary-button w-fit">
                 <div className="font-bold">
                     Subir CV
-                    </div>
+                </div>
             </Link>
         </nav>
     )

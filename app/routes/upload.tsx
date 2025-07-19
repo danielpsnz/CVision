@@ -84,28 +84,28 @@ const Upload = () => {
 
             <section className="main-section">
                 <div className="page-heading py-16">
-                    <h1>Smart feedback for your dream job</h1>
+                    <h1>Feedback inteligente para tu trabajo soñado</h1>
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
                             <img src="/images/resume-scan.gif" className="w-full" />
                         </>
                     ) : (
-                        <h2>Drop your resume for an ATS score and improvement tips</h2>
+                        <h2>Sube tu currículum para obtener una puntuación ATS y consejos de mejora</h2>
                     )}
                     {!isProcessing && (
                         <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
                             <div className="form-div">
-                                <label htmlFor="company-name">Company Name</label>
-                                <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
+                                <label htmlFor="company-name">Nombre de la empresa</label>
+                                <input type="text" name="company-name" placeholder="Nombre de la empresa" id="company-name" />
                             </div>
                             <div className="form-div">
-                                <label htmlFor="job-title">Job Title</label>
-                                <input type="text" name="job-title" placeholder="Job Title" id="job-title" />
+                                <label htmlFor="job-title">Puesto de trabajo</label>
+                                <input type="text" name="job-title" placeholder="Puesto de trabajo" id="job-title" />
                             </div>
                             <div className="form-div">
-                                <label htmlFor="job-description">Job Description</label>
-                                <textarea rows={5} name="job-description" placeholder="Job Description" id="job-description" />
+                                <label htmlFor="job-description">Descripción del puesto</label>
+                                <textarea rows={5} name="job-description" placeholder="Descripción del puesto" id="job-description" />
                             </div>
 
                             <div className="form-div">
@@ -114,7 +114,7 @@ const Upload = () => {
                             </div>
 
                             <button className="primary-button" type="submit">
-                                Analyze Resume
+                                Analizar currículum
                             </button>
                         </form>
                     )}
