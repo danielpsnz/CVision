@@ -183,59 +183,59 @@ export const resumes: Resume[] = [
 
 export const AIResponseFormat = `
       interface Feedback {
-      overallScore: number; //max 100
+      puntuaciónGeneral: number; //máximo 100
       ATS: {
-        score: number; //rate based on ATS suitability
-        tips: {
-          type: "good" | "improve";
-          tip: string; //give 3-4 tips
+        puntuación: number; //calificación basada en la compatibilidad con el ATS
+        consejos: {
+          tipo: "bueno" | "mejorar";
+          consejo: string; //dar entre 3 y 4 consejos
         }[];
       };
-      toneAndStyle: {
-        score: number; //max 100
-        tips: {
-          type: "good" | "improve";
-          tip: string; //make it a short "title" for the actual explanation
-          explanation: string; //explain in detail here
-        }[]; //give 3-4 tips
+      tonoYEstilo: {
+        puntuación: number; //máximo 100
+        consejos: {
+          tipo: "bueno" | "mejorar";
+          consejo: string; //título breve de la explicación
+          explicación: string; //explicación detallada aquí
+        }[]; //dar entre 3 y 4 consejos
       };
-      content: {
-        score: number; //max 100
-        tips: {
-          type: "good" | "improve";
-          tip: string; //make it a short "title" for the actual explanation
-          explanation: string; //explain in detail here
-        }[]; //give 3-4 tips
+      contenido: {
+        puntuación: number; //máximo 100
+        consejos: {
+          tipo: "bueno" | "mejorar";
+          consejo: string; //título breve de la explicación
+          explicación: string; //explicación detallada aquí
+        }[]; //dar entre 3 y 4 consejos
       };
-      structure: {
-        score: number; //max 100
-        tips: {
-          type: "good" | "improve";
-          tip: string; //make it a short "title" for the actual explanation
-          explanation: string; //explain in detail here
-        }[]; //give 3-4 tips
+      estructura: {
+        puntuación: number; //máximo 100
+        consejos: {
+          tipo: "bueno" | "mejorar";
+          consejo: string; //título breve de la explicación
+          explicación: string; //explicación detallada aquí
+        }[]; //dar entre 3 y 4 consejos
       };
-      skills: {
-        score: number; //max 100
-        tips: {
-          type: "good" | "improve";
-          tip: string; //make it a short "title" for the actual explanation
-          explanation: string; //explain in detail here
-        }[]; //give 3-4 tips
+      habilidades: {
+        puntuación: number; //máximo 100
+        consejos: {
+          tipo: "bueno" | "mejorar";
+          consejo: string; //título breve de la explicación
+          explicación: string; //explicación detallada aquí
+        }[]; //dar entre 3 y 4 consejos
       };
     }`;
 
 export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: string; jobDescription: string; }) =>
-    `You are an expert in ATS (Applicant Tracking System) and resume analysis.
-      Please analyze and rate this resume and suggest how to improve it.
-      The rating can be low if the resume is bad.
-      Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
-      If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their resume.
-      If available, use the job description for the job user is applying to to give more detailed feedback.
-      If provided, take the job description into consideration.
-      The job title is: ${jobTitle}
-      The job description is: ${jobDescription}
-      Provide the feedback using the following format:
+    `Eres un experto en ATS (Applicant Tracking System) y en análisis de currículums.
+      Por favor, analiza y califica este currículum y sugiere cómo mejorarlo.
+      La puntuación puede ser baja si el currículum es deficiente.
+      Sé minucioso y detallado. No tengas miedo de señalar errores o áreas de mejora.
+      Si hay mucho que mejorar, no dudes en dar puntuaciones bajas. El objetivo es ayudar al usuario a mejorar su currículum.
+      Si está disponible, utiliza la descripción del puesto al que el usuario está postulando para dar una retroalimentación más detallada.
+      Si se proporciona, ten en cuenta la descripción del trabajo.
+      El título del puesto es: ${jobTitle}
+      La descripción del puesto es: ${jobDescription}
+      Proporciona la retroalimentación usando el siguiente formato:
       ${AIResponseFormat}
-      Return the analysis as an JSON object, without any other text and without the backticks.
-      Do not include any other text or comments.`;
+      Devuelve el análisis como un objeto JSON, sin ningún otro texto y sin las comillas invertidas.
+      No incluyas ningún otro texto ni comentarios.`;
